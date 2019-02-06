@@ -1,0 +1,17 @@
+<%= flash.now[:errors] if flash.now[:errors] %>
+<h1>Create New Sub</h1>
+
+<form action="<%= subs_url %>" method="POST">
+  <%= render "shared/auth" %>
+  <label>Title:  
+    <input type="string" name="sub[title]" value="<%= @sub.title %>">
+  </label>
+  <label>Description: 
+    <input type="text" name="sub[description]" value="<%= @sub.description %>">
+  </label>
+  <input type="submit" value="Submit">
+
+</form>
+
+
+<%= link_to 'Back', subs_path %>

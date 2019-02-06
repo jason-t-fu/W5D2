@@ -1,0 +1,10 @@
+<ul>
+
+<% comment.child_comments.each do |ch_comm| %>
+  <li> <a href="<%= comment_url(ch_comm) %>"><%= ch_comm.content %></a>
+  <%= comment.user.username %>
+  <%= render 'shared/comment', comment: ch_comm %> </li>
+
+<% end %>
+
+</ul>

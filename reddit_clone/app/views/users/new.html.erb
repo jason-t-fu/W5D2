@@ -1,0 +1,16 @@
+<h1>New User</h1>
+
+
+<form action="<%= users_url %>" method="POST">
+  <%= render "shared/auth" %>
+  <label>Username: 
+    <input type="text" name="user[username]" value="<%= @user.username %>">
+  </label>
+  <label>Password: 
+    <input type="password" name="user[password]" value="<%= @user.password %>">
+  </label>
+  <input type="submit" value="Sign Up">
+
+</form>
+
+<%= link_to 'Back', users_path %>
