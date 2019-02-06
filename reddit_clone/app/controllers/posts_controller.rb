@@ -3,8 +3,7 @@ class PostsController < ApplicationController
   before_action :validate_login
 
   def show
-    @post = Post.find_by(id: params[:id])
-    @all_comments = Comment.all.includes(:user).includes(:child_comments)
+    @post = Post.includes(comments: [:user]).find_by(id: params[:id])
   end
   
   def new

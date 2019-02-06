@@ -16,8 +16,8 @@ Subs
 <a href="<%= new_post_comment_url(@post) %>">Add a Comment!</a>
 
 <ul>
-<% if @all_comments %>
-  <% @all_comments.where(parent_comment_id: nil).each do |comment| %>
+<% if @post.comments %>
+  <% @post.comments.where(parent_comment_id: nil).each do |comment| %>
     <li>
       <a href="<%= comment_url(comment) %>"><%= comment.content %></a>
       <!--Recursively iterate through children-->
